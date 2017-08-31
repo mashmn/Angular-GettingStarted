@@ -20,6 +20,15 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
+  imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // < -- debugging
+    ),
+    BrowserModule,
+    FormsModule,
+    HttpClientModule
+  ],
   declarations: [
     AppComponent,
     ProductListComponent,
@@ -27,15 +36,7 @@ const appRoutes: Routes = [
     StarComponent,
     ProductDetailComponent,
     WelcomeComponent
-  ],
-  imports: [
-    RouterModule.forRoot(
-      appRoutes
-    ),
-    BrowserModule,
-    FormsModule,
-    HttpClientModule
-  ],
+  ],  
   providers: [],
   bootstrap: [AppComponent]
 })

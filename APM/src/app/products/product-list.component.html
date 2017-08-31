@@ -43,7 +43,8 @@
                                 [style.margin.px]='imageMargin'>
                         </td>
                         <td>
-                            <a routerlink="['/products', product.productId]">
+                            <!-- <a (click)='openPage(product.productId)'  routerLinkActive="active"> -->
+                            <a [routerLink]="['/products', product.productId]" routerLinkActive="active">
                                 {{ product.productName }}
                             </a>
                         </td>
