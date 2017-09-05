@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { IProduct } from './product';
 import { ProductService } from './product.service';
-import { Router } from '@angular/router';
 
 @Component({
     templateUrl: './product-list.component.html',
@@ -28,7 +27,7 @@ export class ProductListComponent implements OnInit {
 
     products: IProduct[] = [];
 
-    constructor(private _productService: ProductService, private route: Router) {}
+    constructor(private _productService: ProductService) {}
 
     onRatingClicked(message: string): void {
         this.pageTitle = 'Product List: ' + message;

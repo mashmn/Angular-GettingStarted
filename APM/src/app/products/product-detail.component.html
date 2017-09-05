@@ -1,6 +1,7 @@
-<div class = "panel panel-primary" *ngIf = 'product'>
+<div class = "panel panel-primary" *ngIf = 'products'>
   <div class = "panel-heading">
-      {{pageTitle + ':' + product.productName}}
+      <!-- {{pageTitle + ':' + product.productName}} -->
+      {{pageTitle + ':'  }}
   </div>
   <div class="panel-footer">
     <a class="btn btn-default" (click)='onBack()' style='width: 80px'>
@@ -8,4 +9,14 @@
       Back
     </a>
   </div>
+  <table class="table">
+    <tbody>
+      <tr *ngFor='let product of fProducts'>
+          <td>{{ product.productCode }}</td>
+          <td>{{ product.releaseDate }}</td>
+          <td>{{ product.price | currency:'USD' :true:'1.2-2' }}</td>
+          <td>
+        </tr>
+    </tbody>
+  </table>
 </div>
